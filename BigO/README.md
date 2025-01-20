@@ -10,9 +10,9 @@ These examples serve as a practical guide for understanding how algorithm effici
 The repository is organized as follows:
 
 - `BigO/`: Main directory containing all JavaScript files
-  - `Add.js`: Demonstrates different approaches to adding numbers and their time complexities
-  - `Arrays.js`: Showcases time complexities of various array operations
-  - `Objects.js`: Illustrates time complexities of object operations
+  - `1-add.js`: Demonstrates different approaches to adding numbers and their time complexities
+  - `2-arrays.js`: Showcases time complexities of various array operations
+  - `3-objects.js`: Illustrates time complexities of object operations
 
 ## Usage Instructions
 
@@ -33,14 +33,14 @@ The repository is organized as follows:
 To run any of the example files, use the Node.js runtime:
 
 ```bash
-node BigO/Add.js
-node BigO/Arrays.js
-node BigO/Objects.js
+node BigO/1-add.js
+node BigO/2-arrays.js
+node BigO/3-objects.js
 ```
 
 ### Code Examples
 
-#### Adding Numbers (from Add.js)
+#### Adding Numbers (from 1-add.js)
 
 ```javascript
 function addUpTo(n) {
@@ -60,19 +60,22 @@ let t1 = performance.now();
 addUpToFormula(10000000000);
 let t2 = performance.now();
 console.log(`Time Elapsed: ${(t2 - t1) / 1000} seconds.`);
+
+// Additional functions: printUpTo(n) and printUpToFive(n)
 ```
 
-This example demonstrates two methods of adding numbers from 1 to n, showcasing the difference between O(n) and O(1) time complexities.
+This example demonstrates two methods of adding numbers from 1 to n, showcasing the difference between O(n) and O(1) time complexities. It also includes functions for printing numbers.
 
-#### Array Operations (from Arrays.js)
+#### Array Operations (from 2-arrays.js)
 
 ```javascript
 let names = ['Michael', 'Melissa', 'Andrea'];
+let values = [true, {}, [], 2, 'awesome'];
 
-// O(1) operation
+// O(1) operations: push, pop, shift, unshift, splice, sort
 names.push('qalshakhoori');
 
-// O(n) operation
+// O(n) operations: concat, slice, splice, forEach, map, filter, reduce, indexOf, includes
 names.forEach((name) => {
   console.log(name);
 });
@@ -86,7 +89,7 @@ console.log(array1.concat(array2));
 
 This code demonstrates various array operations and their respective time complexities.
 
-#### Object Operations (from Objects.js)
+#### Object Operations (from 3-objects.js)
 
 ```javascript
 let instructor = {
@@ -102,9 +105,14 @@ console.log(instructor.hasOwnProperty('firstName'));
 console.log(Object.values(instructor));
 console.log(Object.entries(instructor));
 console.log(Object.keys(instructor));
+
+// Iterating over object keys
+for (let key in Object.keys(instructor)) {
+  console.log(key);
+}
 ```
 
-This example shows different object operations and their time complexities.
+This example shows different object operations and their time complexities, including iterating over object keys.
 
 ### Troubleshooting
 
@@ -117,7 +125,7 @@ If you encounter any issues while running the examples, ensure that:
 For more detailed error messages, you can run Node.js with the `--trace-warnings` flag:
 
 ```bash
-node --trace-warnings BigO/Add.js
+node --trace-warnings BigO/1-add.js
 ```
 
 This will provide more context for any warnings or errors that occur during execution.
