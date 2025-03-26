@@ -201,6 +201,60 @@ class BinarySearchTree {
 
     return isBalancedNode(this.root);
   }
+
+  BreadthFirstSearch() {
+    let node = this.root;
+    let data = [];
+    let queue = [];
+
+    queue.push(node);
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+
+    return data;
+  }
+
+  DepthFirstSearchPreOrder() {
+    let data = [];
+    function traverse(node) {
+      data.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+
+    traverse(this.root);
+
+    return data;
+  }
+
+  DepthFirstSearchPostOrder() {
+    let data = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node.value);
+    }
+
+    traverse(this.root);
+    return data;
+  }
+
+  DepthFirstSearchInOrder() {
+    let data = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      data.push(node.value);
+      if (node.right) traverse(node.right);
+    }
+
+    traverse(this.root);
+
+    return data;
+  }
 }
 
 var tree = new BinarySearchTree();
@@ -210,3 +264,7 @@ tree.insert(13);
 tree.insert(11);
 tree.insert(2);
 tree.insert(16);
+
+console.log(tree.BreadthFirstSearch());
+console.log(tree.DepthFirstSearchPreOrder());
+console.log(tree.DepthFirstSearchPostOrder());
