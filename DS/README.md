@@ -7,8 +7,14 @@ The implementation includes two main classes: `SinglyLinkedList` and `DoublyLink
 ## Repository Structure
 ```
 DS/
+├── BinarySearchTree.js   # Binary Search Tree implementation
 ├── DoublyLinkedList.js   # Implements bi-directional linked list with prev/next pointers
-└── SinglyLinkedList.js   # Implements unidirectional linked list with next pointers
+├── MaxBinaryHeap.js      # Max Binary Heap implementation
+├── PriorityQueue.js      # Priority Queue implementation
+├── Queue.js              # Queue implementation
+├── README.md
+├── SinglyLinkedList.js   # Implements unidirectional linked list with next pointers
+└── Stack.js              # Stack implementation
 ```
 
 ## Usage Instructions
