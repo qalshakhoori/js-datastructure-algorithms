@@ -9,6 +9,8 @@ The implementation includes two main classes: `SinglyLinkedList` and `DoublyLink
 DS/
 ├── BinarySearchTree.js   # Binary Search Tree implementation
 ├── DoublyLinkedList.js   # Implements bi-directional linked list with prev/next pointers
+├── Graph.js             # Graph data structure implementation
+├── HashTable.js         # Hash Table implementation
 ├── MaxBinaryHeap.js      # Max Binary Heap implementation
 ├── PriorityQueue.js      # Priority Queue implementation
 ├── Queue.js              # Queue implementation

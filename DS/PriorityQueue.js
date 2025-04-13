@@ -24,8 +24,7 @@ class PriorityQueue {
       let parentIndex = Math.floor((index - 1) / 2);
       let parent = this.values[parentIndex];
 
-      if (element.priority <= parent.priority) break;
-
+      if (element.priority >= parent.priority) break;
       this.values[parentIndex] = element;
       this.values[index] = parent;
       index = parentIndex;
@@ -35,8 +34,10 @@ class PriorityQueue {
   dequeue() {
     const max = this.values[0];
     const end = this.values.pop();
-    this.values[0] = end;
-    this.sinkDown();
+    if (this.values.length > 0) {
+      this.values[0] = end;
+      this.sinkDown();
+    }
     return max;
   }
 
