@@ -54,7 +54,7 @@ class PriorityQueue {
 
       if (leftChildIndex < length) {
         leftChild = this.values[leftChildIndex];
-        if (leftChild.priority > element.priority) {
+        if (leftChild.priority < element.priority) {
           swap = leftChildIndex;
         }
       }
@@ -114,13 +114,13 @@ class WeightedGraph {
     while (nodes.values.length) {
       smallest = nodes.dequeue().val;
       if (smallest === finish) {
-        while (previous[smallest]) {
+        while (smallest) {
           path.push(smallest);
           smallest = previous[smallest];
         }
         break;
       }
-      if (smallest || distances[smallest] !== Infinity) {
+      if (smallest !== null && distances[smallest] !== Infinity) {
         for (let neighbor in this.adjacencyList[smallest]) {
           let nextNode = this.adjacencyList[smallest][neighbor];
           let candidate = distances[smallest] + nextNode.weight;
